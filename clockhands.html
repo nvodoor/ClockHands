@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hand Clock</title>
+    <style>
+        /* Add your CSS here */
+      #clock {
+        height: 400px;
+        width: 400px;
+        border-radius: 50%;
+        border: 4px solid black;
+        padding: 20px;
+      }
+      #hour {
+        width: 10px;
+        height: 180px;
+        background-color: black;
+        position: absolute;
+        margin-left: 10%;
+        transform-origin: 0 100%;
+        z-index: 1;
+      }
+      #minute {
+        background-color: black;
+        width: 10px;
+        height: 180px;
+        position: absolute;
+        margin-left: 10%;
+        transform-origin: 0 100%;
+        z-index: 2;
+      }
+      #second {
+        background-color: black;
+        width: 3px;
+        height: 180px;
+        position: absolute;
+        transform-origin: 0 100%;
+        margin-left: 10%;
+        z-index: 3;
+      }
+    </style>
+</head>
+<body>
+  <div id='clock'>
+    <div id='hour'>
+    </div>
+    <div id='minute'>
+    </div>
+    <div id='second'>
+    </div>
+  </div>
+<!--Add your layout here-->
+<script>
+    // Add your JavaScript code here
+    var second = document.getElementById('second')
+    var minute = document.getElementById('minute')
+    var hour = document.getElementById('hour')
+    
+    var secondTransf = 4
+    setInterval(() => {
+      second.style.transform = "rotate("+secondTransf.toString()+"deg)"
+      secondTransf += 4
+    }, 1000)
+    
+    var minuteTransf = 4
+    setInterval(() => {
+      minute.style.transform = "rotate("+minuteTransf.toString()+"deg)"
+      console.log("minute")
+    }, 60000)
+    
+    var hourTransf = 4
+    setInterval(() => {
+      hour.style.transform = "rotate("+hourTransf.toString()+"deg)"
+    }, 3600000)
+</script>
+</body>
+</html>
